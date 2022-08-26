@@ -25,7 +25,7 @@ jobs:
           repository: codepraxis-io/github-actions
           path: github-actions
       - name: Build and Push the Docker Image
-        uses: github-actions/docker-build-push-action
+        uses: ./github-actions/docker-build-push-action
         with:
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
           registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
