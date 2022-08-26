@@ -24,6 +24,7 @@ jobs:
         with:
           repository: codepraxis-io/github-actions
           path: github-actions
+          token: ${{ secrets.GH_PAT }}
       - name: Build and Push the Docker Image
         uses: ./github-actions/docker-build-push-action
         with:
