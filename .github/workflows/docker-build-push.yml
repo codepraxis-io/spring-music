@@ -1,0 +1,46 @@
+name: docker-build-push
+
+on:
+  push:
+    branches:
+      - main
+    # paths:
+    #   - "scr/**"
+
+jobs:
+  docker-build-push-deploy:
+    runs-on: ubuntu-latest
+    env:
+      SRC: './spring-music'
+      DOCKER_IMAGE: 'spring-music'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build JAR 
+        run: |
+          ./github/scripts/build-app.sh
+      # - name: Checkout github-actions Repo
+      #   uses: actions/checkout@v3
+      #   with:
+      #     repository: codepraxis-io/github-actions
+      #     path: github-actions
+      # - name: Build and Push the Docker Image
+      #   uses: ./.github/actions/docker-build-push-action
+      #   with:
+      #     registry_username: ${{ secrets.DOCKER_USERNAME }}
+      #     registry_password: ${{ secrets.DOCKER_PASSWORD }}
+      #     image_name: reveelsystems/${{ env.DOCKER_IMAGE }}
+      #     context: '${{ env.SRC }}'
+      #     dockerfile_path: '${{ env.SRC }}/Dockerfile'
+      #     build_args: NPM_TOKEN=${{ env.NPM_TOKEN }}
+      #     extra_tags: staging
+      # - name: Deploy Docker image to Kubernetes cluster in Digital Ocean
+      #   uses: ./.github/actions/deploy-digitalocean-action
+      #   with:
+      #     access_token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      #     deployment_name: ${{ env.DIGITALOCEAN_DEPLOYMENT_NAME }}
+      # - name: Deploy Docker image to Kubernetes cluster in AWS
+      #   uses: ./.github/actions/deploy-aws-action
+      #   with:
+      #     kubeconfig: ""
+      #     overlay: "staging"
+      #     service_name: ${{ env.DOCKER_IMAGE }}
