@@ -1,4 +1,4 @@
-name: docker-build-push
+name: docker-build-push-eclipse-temurin-17-jammy
 
 on:
   push:
