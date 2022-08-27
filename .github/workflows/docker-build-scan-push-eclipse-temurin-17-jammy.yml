@@ -1,4 +1,4 @@
-name: docker-build-push-eclipse-temurin-17-jammy
+name: docker-build-scan-push-eclipse-temurin-17-jammy
 
 on:
   push:
@@ -25,12 +25,13 @@ jobs:
           repository: codepraxis-io/github-actions
           path: github-actions
           token: ${{ secrets.GH_PAT }}
-      - name: Build and Push the Docker Image
-        uses: ./github-actions/docker-build-push-action
+      - name: Build, Scan and Push the Docker Image
+        uses: ./github-actions/docker-build-scan-push-action
         with:
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
           registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.DOCKERHUB_ORG }}/${{ env.DOCKER_IMAGE }}
+          image_tag_prefix: temurin
           context: '${{ env.SRC }}'
           dockerfile_path: '${{ env.SRC }}/Dockerfile.eclipse-temurin-17-jre-jammy'
           extra_tags: 'eclipse-temurin-17-jre-jammy'

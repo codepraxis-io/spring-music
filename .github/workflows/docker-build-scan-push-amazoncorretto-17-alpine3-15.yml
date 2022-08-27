@@ -26,12 +26,13 @@ jobs:
           path: github-actions
           token: ${{ secrets.GH_PAT }}
       - name: Build and Push the Docker Image
-        uses: ./github-actions/docker-build-push-action
+        uses: ./github-actions/docker-build-scan-push-action
         with:
           registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
           registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.DOCKERHUB_ORG }}/${{ env.DOCKER_IMAGE }}
           context: '${{ env.SRC }}'
+          image_tag_prexi: amazoncorretto
           dockerfile_path: '${{ env.SRC }}/Dockerfile.amazoncorretto-17-alpine3-15'
           extra_tags: 'amazoncorretto-17-alpine3-15'
           build_args: ''
