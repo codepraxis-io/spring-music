@@ -32,6 +32,6 @@ jobs:
           registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.DOCKERHUB_ORG }}/${{ env.DOCKER_IMAGE }}
           context: '${{ env.SRC }}'
-          dockerfile_path: '${{ env.SRC }}/Dockerfile'
+          dockerfile_path: '${{ env.SRC }}/Dockerfile.eclipse-temurin-17-jre-jammy'
           build_args: ""
 
