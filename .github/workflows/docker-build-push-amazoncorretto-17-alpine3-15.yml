@@ -33,6 +33,6 @@ jobs:
           image_name: ${{ env.DOCKERHUB_ORG }}/${{ env.DOCKER_IMAGE }}
           context: '${{ env.SRC }}'
           dockerfile_path: '${{ env.SRC }}/Dockerfile.amazoncorretto-17-alpine3-15'
-          #extra_tags: 'latest'
+          extra_tags: 'amazoncorretto-17-alpine3-15'
           build_args: ''
 
