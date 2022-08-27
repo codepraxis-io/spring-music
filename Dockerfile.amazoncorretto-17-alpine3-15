@@ -1,0 +1,5 @@
+FROM amazoncorretto:17.0.4-alpine3.15
+WORKDIR /app 
+COPY ./build/libs/spring-music-*.jar /app/app.jar
+
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/app.jar"]
