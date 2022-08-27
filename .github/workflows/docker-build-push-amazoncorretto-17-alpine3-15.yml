@@ -32,7 +32,7 @@ jobs:
           registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.DOCKERHUB_ORG }}/${{ env.DOCKER_IMAGE }}
           context: '${{ env.SRC }}'
-          dockerfile_path: '${{ env.SRC }}/Dockerfile.amazoncorretto-17-alpine3-15
+          dockerfile_path: '${{ env.SRC }}/Dockerfile.amazoncorretto-17-alpine3-15'
           #extra_tags: 'latest'
           build_args: ''
 
