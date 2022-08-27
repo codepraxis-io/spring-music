@@ -8,7 +8,7 @@ on:
     #   - "src/**"
 
 jobs:
-  docker-build-push-deploy:
+  docker-build-scan-push:
     runs-on: ubuntu-latest
     env:
       SRC: '.'
