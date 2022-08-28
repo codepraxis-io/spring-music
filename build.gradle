@@ -7,6 +7,8 @@ plugins {
     id 'maven-publish'
 }
 
+group='spring-music'
+
 repositories {
     mavenCentral()
 }
