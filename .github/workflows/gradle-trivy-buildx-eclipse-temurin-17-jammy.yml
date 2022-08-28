@@ -12,13 +12,7 @@ jobs:
   gradle-trivy-buildx:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout github-actions Repo
-        uses: actions/checkout@v3
-        with:
-          repository: codepraxis-io/github-actions
-          path: github-actions
-          token: ${{ secrets.GH_PAT }}
-      - uses: ./github-actions/reusable-workflows/gradle-trivy-buildx.yml
+      - uses: codepraxis-io/github-actions/reusable-workflows/gradle-trivy-buildx.yml@master
         with:
           image_name: 'griggheo/spring-music'
           image_tag_prefix: temurin
@@ -26,8 +20,8 @@ jobs:
           dockerfile_path: 'Dockerfile.eclipse-temurin-17-jre-jammy'
           extra_tags: 'eclipse-temurin-17-jre-jammy'
           build_args: ''
-        # secrets:
-        #   registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
-        #   registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        #   github_token: ${{ secrets.GH_PAT }}
+        secrets:
+          registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          github_token: ${{ secrets.GH_PAT }}
 
