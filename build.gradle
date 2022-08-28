@@ -1,5 +1,3 @@
-group='io.codepraxis'
-
 plugins {
     id 'org.springframework.boot' version '2.6.7'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -12,6 +10,8 @@ plugins {
 repositories {
     mavenCentral()
 }
+
+group='io.codepraxis'
 
 ext {
     javaCfEnvVersion = '2.4.0'
