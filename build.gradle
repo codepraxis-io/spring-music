@@ -4,6 +4,7 @@ plugins {
     id 'java'
     id 'eclipse-wtp'
     id 'idea'
+    id 'maven-publish'
 }
 
 repositories {
@@ -64,4 +65,22 @@ java {
 
 jar {
     enabled = false
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/codepraxis-io/spring-music")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
 }
