@@ -15,7 +15,7 @@ jobs:
       DOCKER_IMAGE: 'spring-music'
       DOCKERHUB_ORG: 'griggheo'
     steps:
-      - uses: codepraxis-io/github-actions/reusable-workflows/docker-build-scan-push
+      - uses: codepraxis-io/github-actions/reusable-workflows/docker-build-scan-push@master
         token: ${{ secrets.GH_PAT }}
         with:
           image_name: 'griggheo/spring-music'
