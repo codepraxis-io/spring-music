@@ -15,8 +15,8 @@ jobs:
       DOCKER_IMAGE: 'spring-music'
       DOCKERHUB_ORG: 'griggheo'
     steps:
-      - uses: actions/checkout@v3
       - uses: codepraxis-io/github-actions/reusable-workflows/docker-build-scan-push
+        token: ${{ secrets.GH_PAT }}
         with:
           image_name: 'griggheo/spring-music'
           image_tag_prefix: temurin
