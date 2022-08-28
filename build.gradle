@@ -7,7 +7,7 @@ plugins {
     id 'maven-publish'
 }
 
-group='spring-music'
+group='io.codepraxis'
 
 repositories {
     mavenCentral()
