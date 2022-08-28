@@ -3,7 +3,7 @@ name: docker-build-scan-push-eclipse-temurin-17-jammy
 on:
   push:
     branches:
-      - master
+      - none
     # paths:
     #   - "src/**"
 

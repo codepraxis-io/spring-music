@@ -3,7 +3,7 @@ name: docker-build-push-amazoncorretto-17-alpine3-15
 on:
   push:
     branches:
-      - master
+      - none
     # paths:
     #   - "src/**"
 
