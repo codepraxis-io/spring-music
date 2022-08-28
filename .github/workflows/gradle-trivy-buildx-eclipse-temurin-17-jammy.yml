@@ -20,8 +20,8 @@ jobs:
           dockerfile_path: 'Dockerfile.eclipse-temurin-17-jre-jammy'
           extra_tags: 'eclipse-temurin-17-jre-jammy'
           build_args: ''
-        secrets:
-          registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          github_token: ${{ secrets.GH_PAT }}
+        # secrets:
+        #   registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
+        #   registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        #   github_token: ${{ secrets.GH_PAT }}
 
