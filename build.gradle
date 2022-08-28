@@ -7,8 +7,6 @@ plugins {
     id 'maven-publish'
 }
 
-group='io.codepraxis'
-
 repositories {
     mavenCentral()
 }
@@ -66,7 +64,7 @@ java {
 }
 
 jar {
-    enabled = false
+    enabled = true
 }
 
 publishing {
