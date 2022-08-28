@@ -6,8 +6,6 @@ on:
       - master
     # paths:
     #   - "src/**"
-
-on:
   workflow_dispatch:
   
 jobs:
