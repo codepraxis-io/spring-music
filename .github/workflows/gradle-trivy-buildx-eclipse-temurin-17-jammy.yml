@@ -6,6 +6,7 @@ on:
       - master
     # paths:
     #   - "src/**"
+  workflow_call:
 
 jobs:
   gradle-trivy-buildx:
