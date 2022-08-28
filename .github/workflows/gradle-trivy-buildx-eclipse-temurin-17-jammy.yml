@@ -11,7 +11,7 @@ on:
 jobs:
   gradle-trivy-buildx:
     runs-on: ubuntu-latest
-    uses: codepraxis-io/github-actions/reusable-workflows/gradle-trivy-buildx.yml@master
+    uses: codepraxis-io/github-actions/.github/workflows/gradle-trivy-buildx.yml@master
     with:
       image_name: 'griggheo/spring-music'
       image_tag_prefix: temurin
