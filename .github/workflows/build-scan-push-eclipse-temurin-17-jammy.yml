@@ -1,4 +1,4 @@
-name: generic-workflow-eclipse-temurin-17-jammy
+name: gradle-trivy-buildx-eclipse-temurin-17-jammy
 
 on:
   push:
@@ -8,10 +8,16 @@ on:
     #   - "src/**"
 
 jobs:
-  generic-workflow:
+  gradle-trivy-buildx:
     runs-on: ubuntu-latest
     steps:
-      - uses: codepraxis-io/github-actions/reusable-workflows/docker-build-scan-push@master
+      - name: Checkout github-actions Repo
+        uses: actions/checkout@v3
+        with:
+          repository: codepraxis-io/github-actions
+          path: github-actions
+          token: ${{ secrets.GH_PAT }}
+      - uses: ./github-actions/reusable-workflows/gradle-trivy-buildx.yml
         with:
           image_name: 'griggheo/spring-music'
           image_tag_prefix: temurin
