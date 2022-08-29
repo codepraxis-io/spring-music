@@ -17,5 +17,7 @@ target/
 .gradle
 build/
 
+*.jar
+
 *.log*
 /classes/
