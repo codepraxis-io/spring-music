@@ -67,9 +67,9 @@ java {
 
 bootJar {
     enabled = true
-    manifest {
-        attributes 'Main-Class': "org.cloudfoundry.samples.music.Application"
-    }
+    // manifest {
+    //     attributes 'Main-Class': "org.cloudfoundry.samples.music.Application"
+    // }
 }
 
 publish {
