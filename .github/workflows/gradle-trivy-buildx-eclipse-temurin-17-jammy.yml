@@ -21,5 +21,6 @@ jobs:
     secrets:
       registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
       registry_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      gh_packages_username: ${{ secrets.GH_PACKAGES_USERNAME }}
       gh_pat: ${{ secrets.GH_PAT }}
 
