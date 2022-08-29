@@ -1,3 +1,5 @@
+mainClassName = 'org.cloudfoundry.samples.music.Application'
+
 plugins {
     id 'org.springframework.boot' version '2.6.7'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -65,7 +67,7 @@ java {
     }
 }
 
-jar {
+bootJar {
     enabled = true
     manifest {
         attributes 'Main-Class': "org.cloudfoundry.samples.music.Application"
