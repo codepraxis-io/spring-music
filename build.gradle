@@ -68,7 +68,7 @@ java {
 jar {
     enabled = true
     manifest {
-        attributes 'Main-Class': org.cloudfoundry.samples.music.Application
+        attributes 'Main-Class': "org.cloudfoundry.samples.music.Application"
     }
 }
 
