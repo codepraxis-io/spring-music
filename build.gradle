@@ -72,8 +72,11 @@ bootJar {
     }
 }
 
-publishing {
+publish {
     dependsOn assemble
+} 
+
+publishing {
     repositories {
         maven {
             name = "GitHubPackages"
