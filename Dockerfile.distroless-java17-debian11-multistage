@@ -4,6 +4,6 @@ WORKDIR /app
 RUN ./gradlew clean assemble
 
 FROM gcr.io/distroless/java11-debian11
-COPY --from=build-env /app/build/lib/*jar /app/app.jar
+COPY --from=build-env /app/build/libs/*jar /app/app.jar
 WORKDIR /app
 CMD ["app.jar"]
