@@ -2,4 +2,4 @@ FROM amazoncorretto:17.0.4-alpine3.15
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/app.jar"]
+ENTRYPOINT ["java","-jar","/app/app.jar"]
