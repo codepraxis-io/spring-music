@@ -2,8 +2,10 @@ name: gradle-trivy-buildx-eclipse-temurin-17-jammy
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - *
+    #branches:
+    #  - master
     # paths:
     #   - "src/**"
   workflow_call:
