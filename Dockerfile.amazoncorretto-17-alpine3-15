@@ -1,4 +1,6 @@
-FROM amazoncorretto:17.0.4-alpine3.15
+ARG BASE_IMAGE=amazoncorretto:17.0.4-alpine3.15
+FROM ${BASE_IMAGE}
+
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar
 

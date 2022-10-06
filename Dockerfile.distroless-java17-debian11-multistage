@@ -1,9 +1,0 @@
-FROM openjdk:11-jdk-slim-bullseye AS build-env
-COPY . /app
-WORKDIR /app
-RUN ./gradlew clean assemble
-
-FROM gcr.io/distroless/java11-debian11
-COPY --from=build-env /app/build/libs/*jar /app/app.jar
-WORKDIR /app
-CMD ["app.jar"]

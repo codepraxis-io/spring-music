@@ -1,4 +1,6 @@
-FROM openjdk:11-jdk-slim-bullseye AS build-env
+ARG BASE_IMAGE=openjdk:11-jdk-slim-bullseye AS build-env
+FROM ${BASE_IMAGE}
+
 COPY . /app
 WORKDIR /app
 RUN ./gradlew clean assemble
