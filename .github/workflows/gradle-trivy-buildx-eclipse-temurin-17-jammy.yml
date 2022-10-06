@@ -2,8 +2,8 @@ name: gradle-trivy-buildx-eclipse-temurin-17-jammy
 
 on:
   push:
-    tags:
-      - *
+    tags:        
+      - v*.*.*
     #branches:
     #  - master
     # paths:
