@@ -1,5 +1,4 @@
-ARG BASE_IMAGE=openjdk:11-jdk-slim-bullseye AS build-env
-FROM ${BASE_IMAGE}
+FROM openjdk:11-jdk-slim-bullseye AS build-env
 
 COPY . /app
 WORKDIR /app

@@ -1,5 +1,4 @@
-ARG BASE_IMAGE=gcr.io/distroless/java17-debian11
-FROM ${BASE_IMAGE}
+FROM ghcr.io/codepraxis-io/distroless/java17-debian11
 
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar

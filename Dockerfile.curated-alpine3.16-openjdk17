@@ -1,5 +1,4 @@
-ARG BASE_IMAGE=ghcr.io/codepraxis-io/alpine3.16:openjdk17 
-FROM ${BASE_IMAGE}
+FROM ghcr.io/codepraxis-io/alpine3.16:openjdk17 
 
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar
