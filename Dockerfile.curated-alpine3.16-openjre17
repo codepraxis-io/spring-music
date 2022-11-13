@@ -3,4 +3,6 @@ FROM ghcr.io/codepraxis-io/alpine3.16:openjre17
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar
 
+USER devsecops
+
 ENTRYPOINT ["java","-jar","/app/app.jar"]
