@@ -4,4 +4,6 @@ FROM ${BASE_IMAGE}
 WORKDIR /app 
 COPY ./build/libs/app.jar /app/app.jar
 
+USER devsecops
+
 ENTRYPOINT ["java","-jar","/app/app.jar"]
